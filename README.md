@@ -48,7 +48,7 @@ Renpy的解包一般都是基于https://github.com/Lattyware/unrpa
 
 ### 添加语言选项直接模仿原文件中的对应句式即可，这里给出PW中的语言选项代码：
 
-textbutton "{font=975GothicSC-Regular.ttf}简体中文{font}" action Language("cchinese")
+    textbutton "{font=975GothicSC-Regular.ttf}简体中文{font}" action Language("cchinese")
 
 font为指定这个文本使用特定字体，字体目录默认为game文件夹下，字体推荐去https://www.maoken.com/all-fonts
 选用免费字体，​Language里则表示使用tl/XXX下的翻译文件，使用你前一步创建的名称即可；
@@ -134,11 +134,11 @@ https://github.com/Dclef/renpy-tl
 
 某些游戏中使用了Renpy的extend特性，因此双语在第二行文字时会出现没有空行的现象，使用超文本编辑器，将双语文件夹中的所有rpy导入，一键替换：
 
-extend " 为extend "\n
+    extend " 为extend "\n
 
 然后更正一下原文一键替换：
 
-" # extend "\n\n 为 # extend "\n "
+    # extend "\n\n 为 # extend "\n
 
 当然，其实不需要更正原文，因为据我研究，好像根本不靠这个定位原文（XD）；
 
