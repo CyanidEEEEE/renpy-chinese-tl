@@ -26,12 +26,12 @@ Renpy的解包一般都是基于https://github.com/Lattyware/unrpa
 （1）如果发现游戏目录里只有rpyc，表示作者删除了rpy，算是做了加密处理，不过使用https://github.com/CensoredUsername/unrpyc
 将其放入game目录下，运行游戏，即可得到rpy；
 
-（2）apk解包，renpy游戏的apk中，其实就是把所有文件加了X-，只需要解压apk，将其批量重命名即可，这里推荐使用这个工具https://github.com/DrDRR/RenPy-UnAPK；
+（2）apk解包，renpy游戏的apk中，其实就是把所有文件加了X-，只需要解压apk，将其批量重命名即可，这里推荐使用这个工具https://github.com/DrDRR/RenPy-UnAPK
 
 
 ### 预处理
 
-大部分Renpy游戏其实不需要预处理，需要预处理的情况主要是游戏存在大量为按照renpy文档撰写多语言支持的变量的情况（点名RPG），这里推荐使用该工具处理https://github.com/DrDRR/RenPy-TransVariables；
+大部分Renpy游戏其实不需要预处理，需要预处理的情况主要是游戏存在大量为按照renpy文档撰写多语言支持的变量的情况（点名RPG），这里推荐使用该工具处理https://github.com/DrDRR/RenPy-TransVariables
 
 
 ## 添加语言及UI
