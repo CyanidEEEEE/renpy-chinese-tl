@@ -1,4 +1,4 @@
-# renpy-tl
+# renpy游戏协作翻译、汉化与机翻教程
 renpy游戏翻译的教程、团队协作拓展
 Renpy引擎目前在众多VN中得到使用，其对多语言翻译的支持也十分友善，只需要在Sdk下生成tl文件一般即可进行翻译工作，但是鉴于汉化活动一般都是基于一个爱好者组织来进行的，rpy文件对于协作的支持十分有限，因此本文将大致讲一下汉化的流程以及重点描述协作汉化、机翻自己玩的流程。
 
@@ -16,12 +16,15 @@ Renpy引擎目前在众多VN中得到使用，其对多语言翻译的支持也�
 
 ### 普通情况解包
 
-Renpy的解包一般都是基于https://github.com/Lattyware/unrpa，详细的使用方法请自行阅读文档，但是基于使用的便利性考虑，分享一个更便利的软件：https://iwanplays.itch.io/rpaex，只需要将rpa直接拖拽到该软件即可解包，解包后将rpa文件删除。
+Renpy的解包一般都是基于https://github.com/Lattyware/unrpa
+详细的使用方法请自行阅读文档，但是基于使用的便利性考虑，分享一个更便利的软件：https://iwanplays.itch.io/rpaex
+只需要将rpa直接拖拽到该软件即可解包，解包后将rpa文件删除。
 
 
 ### 特殊情况解包
 
-（1）如果发现游戏目录里只有rpyc，表示作者删除了rpy，算是做了加密处理，不过使用https://github.com/CensoredUsername/unrpyc，将其放入game目录下，运行游戏，即可得到rpy；
+（1）如果发现游戏目录里只有rpyc，表示作者删除了rpy，算是做了加密处理，不过使用https://github.com/CensoredUsername/unrpyc
+将其放入game目录下，运行游戏，即可得到rpy；
 
 （2）apk解包，renpy游戏的apk中，其实就是把所有文件加了X-，只需要解压apk，将其批量重命名即可，这里推荐使用这个工具https://github.com/DrDRR/RenPy-UnAPK；
 
@@ -47,33 +50,34 @@ Renpy的解包一般都是基于https://github.com/Lattyware/unrpa，详细的�
 
 textbutton "{font=975GothicSC-Regular.ttf}简体中文{font}" action Language("cchinese")
 
-font为指定这个文本使用特定字体，字体目录默认为game文件夹下，字体推荐去https://www.maoken.com/all-fonts找，选用免费字体，​Language里则表示使用tl/XXX下的翻译文件，使用你前一步创建的名称即可；
+font为指定这个文本使用特定字体，字体目录默认为game文件夹下，字体推荐去https://www.maoken.com/all-fonts
+选用免费字体，​Language里则表示使用tl/XXX下的翻译文件，使用你前一步创建的名称即可；
 
 
 ### 修改UI
 
 由于不同文字之间的情况不同，调整UI尤为重要，因此一般都需要修改UI的参数，这一步的所有参数都需要去原文件中，例如gui、screen中找，找到参数之后才可以定义修改，我们可以在tl/none中随意创建一个rpy，例如UI.rpy，然后在里面指定特定语言使用的UI参数，例如，我要指定cchinese的UI参数：
 
-translate cchinese python:
-    gui.default_font = "975GothicSC-Regular.ttf"
-    gui.name_font = "975GothicSC-Regular.ttf"
-    gui.interface_font = "975GothicSC-Regular.ttf"
-    gui.button_text_font = "975GothicSC-Regular.ttf"
-    gui.choice_button_text_font = "975GothicSC-Regular.ttf"
-    gui.label_text_size = 20
-    gui.button_text_size = 23
-    gui.text_size = 23
-    gui.text_ypos = 26
+    translate cchinese python:
+        gui.default_font = "975GothicSC-Regular.ttf"
+        gui.name_font = "975GothicSC-Regular.ttf"
+        gui.interface_font = "975GothicSC-Regular.ttf"
+        gui.button_text_font = "975GothicSC-Regular.ttf"
+        gui.choice_button_text_font = "975GothicSC-Regular.ttf"
+        gui.label_text_size = 20
+        gui.button_text_size = 23
+        gui.text_size = 23
+        gui.text_ypos = 26
 
-    if renpy.variant("touch"):
-        gui.text_size = 31
-        gui.name_text_size = 34
-        gui.text_width = 1200
-        gui.text_xpos = 38
-        gui.text_ypos = 47
-        gui.name_xpos = 57
-        gui.name_ypos = 0
-        gui.button_text_size = 30
+        if renpy.variant("touch"):
+            gui.text_size = 31
+            gui.name_text_size = 34
+            gui.text_width = 1200
+            gui.text_xpos = 38
+            gui.text_ypos = 47
+            gui.name_xpos = 57
+            gui.name_ypos = 0
+            gui.button_text_size = 30
 
 这里包含了普通UI与手机UI两种参数，仅针对cchinese语言，UI调试过程比较玄学，请大家自己多尝试，推荐在该rpy前面加 define config.developer = "True"，开启renpy调试模式，使用Shift+R即可重载文件，Shift+D进入开发者菜单，调试完成后删除或改为False；
 
@@ -90,7 +94,7 @@ translate cchinese python:
 
 ## 协作翻译与机翻
 
-​终于到了本文最重要的环节，前面的流程其实有很多可以参考的其他教程，例如：
+终于到了本文最重要的环节，前面的流程其实有很多可以参考的其他教程，例如：
 
 https://drdrr.xyz/%E6%95%99%E7%A8%8B/2021/02/10/renpy-localization-tutorial/
 
@@ -100,17 +104,21 @@ https://github.com/Dclef/renpy-tl
 
 ### 导出PO文件
 
-我们首先用到的工具是https://www.beuc.net/renpy-ttk/dir?ci=tip，相关文件备份在这里https://github.com/CyanidEEEEE/renpy-chinese-tl/releases/tag/1.0，使用这个工具只需要将其像renpy游戏一样放置于设定的renpy主目录，在sdk中运行即可，运行后，选择对应的游戏与语言，使用tl2po，即可将所有rpy导出，成为PO文件，如果只是为了集合到一起方便编辑，直接用Poedit编辑汉化PO之后再使用mo2tl选择PO文件即可导入翻译；
+我们首先用到的工具是https://www.beuc.net/renpy-ttk/dir?ci=tip
+相关文件备份在这里https://github.com/CyanidEEEEE/renpy-chinese-tl/releases/tag/1.0
+使用这个工具只需要将其像renpy游戏一样放置于设定的renpy主目录，在sdk中运行即可，运行后，选择对应的游戏与语言，使用tl2po，即可将所有rpy导出，成为PO文件，如果只是为了集合到一起方便编辑，直接用Poedit编辑汉化PO之后再使用mo2tl选择PO文件即可导入翻译；
 
 
 ### 转换成xlsx文件
 
-这里我们使用可爱米宝开发的https://github.com/Maooookai/po_and_excel_transfer_tool，记得安装requirement，将PO转为xlsx之后，我们就得到了无论是机翻也好协作也好，最便利的xlsx文件，在线协作流程就自己学习啦，石墨文档和谷歌文档很不错，腾讯文档的话，主要是便利吧？由于这个过程中，不同的游戏有不同的问题，所以请务必马上尝试转回PO文件，使用Beyond Compare对比查看转换回来后的PO有什么错误，之后转回时务必修复，如果遇到无法解决的问题，去写ISSUE吧拜托神奇米宝吧！(bushi)，善用excel的公式与插件，例如方方格子；
+这里我们使用可爱米宝开发的https://github.com/Maooookai/po_and_excel_transfer_tool
+记得安装requirement，将PO转为xlsx之后，我们就得到了无论是机翻也好协作也好，最便利的xlsx文件，在线协作流程就自己学习啦，石墨文档和谷歌文档很不错，腾讯文档的话，主要是便利吧？由于这个过程中，不同的游戏有不同的问题，所以请务必马上尝试转回PO文件，使用Beyond Compare对比查看转换回来后的PO有什么错误，之后转回时务必修复，如果遇到无法解决的问题，去写ISSUE吧拜托神奇米宝吧！(bushi)，善用excel的公式与插件，例如方方格子；
 
 
 ### 机翻与修复文本错误的技巧
 
-已经得到xlsx后，机翻只需要将那一整列文本复制导出，机翻后再导入回去即可，机翻的工具推荐使用https://github.com/Maooookai/WebTranslator，里面的webdriver自己根据chrome版本更新，将文本导出保存为trans.txt，然后使用该工具进行翻译，该工具带进度保存，中途程序出问题中断后直接再次运行即可，不过目前有某些BUG，详情请看ISSUE，机翻引擎个人体验下来，最喜欢彩云小译与Deepl，Deepl的翻译米宝还没写，大家想要可以自己去催！记得对照renpy的文档处理一些特殊符号，尽量保持与原文一致，一般来说，同一个游戏由于文本编写的连贯性，因此可以使用一套替换公式，在这里推荐使用word插件——word精灵，使用其批量替换功能，记得每次改一类重复出现的BUG时写一套替换公式表格，这样下次更新的时候只需要批量替换即可修正大多数错误。还有一种思路是从机翻之前入手，比如自定义的角色名，文本中是[mcname]，你可以先批量替换成一个翻译引擎只有一种翻译的人名，比如Hitler，这样得到机翻文本后把希特勒批量替换回[mcname]即可。
+已经得到xlsx后，机翻只需要将那一整列文本复制导出，机翻后再导入回去即可，机翻的工具推荐使用https://github.com/Maooookai/WebTranslator
+里面的webdriver自己根据chrome版本更新，将文本导出保存为trans.txt，然后使用该工具进行翻译，该工具带进度保存，中途程序出问题中断后直接再次运行即可，不过目前有某些BUG，详情请看ISSUE，机翻引擎个人体验下来，最喜欢彩云小译与Deepl，Deepl的翻译米宝还没写，大家想要可以自己去催！记得对照renpy的文档处理一些特殊符号，尽量保持与原文一致，一般来说，同一个游戏由于文本编写的连贯性，因此可以使用一套替换公式，在这里推荐使用word插件——word精灵，使用其批量替换功能，记得每次改一类重复出现的BUG时写一套替换公式表格，这样下次更新的时候只需要批量替换即可修正大多数错误。还有一种思路是从机翻之前入手，比如自定义的角色名，文本中是[mcname]，你可以先批量替换成一个翻译引擎只有一种翻译的人名，比如Hitler，这样得到机翻文本后把希特勒批量替换回[mcname]即可。
 
 
 ### 制作双语对照
@@ -130,7 +138,7 @@ extend " 为extend "\n
 
 然后更正一下原文一键替换：
 
-# extend "\n\n 为 # extend "\n
+" # extend "\n\n 为 # extend "\n "
 
 当然，其实不需要更正原文，因为据我研究，好像根本不靠这个定位原文（XD）；
 
