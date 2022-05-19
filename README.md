@@ -46,7 +46,7 @@ Renpy的解包一般都是基于https://github.com/Lattyware/unrpa
 
 个人认为应在尽量不破坏原文件的基础上进行改动，因此这里可以使用renpy的特性，我们在tl/none中创建一个rpy，rpy名为你想要更改的原rpy名，比如我想更改screen.rpy添加语言选项，我就在该文件夹中创建一个，然后将原本文件中的部分或者全部内容复制过来，注意部分复制必须复制一个完整的框架，例如某个screen框架，在这里修改，游戏会优先使用这边的代码，因此即可达到不修改原文件并添加语言。
 
-### 添加语言选项直接模仿原文件中的对应句式即可，这里给出PW中的语言选项代码：
+添加语言选项直接模仿原文件中的对应句式即可，这里给出PW中的语言选项代码：
 
     textbutton "{font=975GothicSC-Regular.ttf}简体中文{font}" action Language("cchinese")
 
