@@ -165,7 +165,7 @@ https://github.com/NEKOparapa/AiNiee-chatgpt
 
 使用Neko的轮子主要是因为一开始认为translator++看起来很便利？试了试，导出导入对于不协作的人来说，确实还是不错的，但是对于我个人来说，因为是采取的协作+机翻，因此不可能采用这种模式，不过由于translator++导出的是excel，因此该软件实质上就是支持translator++导出格式的excel然后使用GPT API进行翻译，所以只需要稍加改改，用这个模版：
 
-Original Text      Initial         Machine translation         Better translation
+Original Text ||| Initial ||| Machine translation ||| Better translation
 
 就能让该软件正常识别以翻译，结合文章前段提到的po转excel之类的，就可以完美结合在一起使用了，顺带提一嘴，有人反馈renpy-ttk仅支持7.0版本的renpy使用，其实目前使用renpy-ttk支持8.0问题不算大，很简单，你大部分操作在8.0版本的renpy，只有导入导出po在7.0就好了XD。当然以上全是我个人的需求，大家完全可以根据自己的需要找自己想要的轮子，感谢努力的开源社区，为我们提供了极大的便利，不然又准备push程序员朋友写新程序了！
 
